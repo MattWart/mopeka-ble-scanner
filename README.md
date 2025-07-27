@@ -1,19 +1,27 @@
-# 🛢️ Mopeka BLE Scanner für Arduino
+# 🛢️ Mopeka BLE Scanner für Arduino / BLE Scanner for Mopeka Sensor (Arduino)
 
-Ein einfacher Arduino-Sketch zum Auslesen von **Mopeka Pro BLE-Gassensoren** über Bluetooth Low Energy (BLE). Unterstützt RSSI, Batteriezustand, Temperatur, Füllstand, Signalqualität und mehr.
+Ein Arduino-Sketch zum Auslesen von **Mopeka Pro BLE-Gassensoren**. Unterstützt Batteriespannung, Temperatur, Füllstand, Signalqualität uvm.
 
-## 📦 Funktionen
+An Arduino sketch to read data from **Mopeka Pro BLE gas sensors**. Supports battery voltage, temperature, fill level, signal quality and more.
 
-- BLE-Scan nach Geräten mit Hersteller-ID `0x0059` (Mopeka)
-- Auslesen und Parsen der Rohdaten
-- Anzeige von:
-  - Batteriespannung und -prozent
-  - Temperatur in °C und °F
-  - Tankfüllstand in mm und %
-  - Signalqualität (Sterne)
-  - MAC-Adresse & Gerätename (sofern vorhanden)
+---
 
-## 🚀 Beispielausgabe
+## 📦 Funktionen / Features
+
+- Scan nach BLE-Geräten mit Hersteller-ID `0x0059` (Mopeka)  
+  Scan for BLE devices with Manufacturer ID `0x0059` (Mopeka)
+- Auslesen und Dekodieren der Rohdaten  
+  Read and decode raw manufacturer data
+- Anzeige von / Displays:
+  - Batteriespannung / Battery voltage
+  - Temperatur (°C / °F)
+  - Tankfüllstand (mm / inch, %)
+  - Signalqualität / Signal quality (stars)
+  - MAC-Adresse & Gerätename / MAC address & name (if available)
+
+---
+
+## 🚀 Beispielausgabe / Example Output
 
 ```
 ✅ Mopeka-Sensor erkannt!
@@ -21,29 +29,48 @@ MopekaAdvertisement - Battery: 2.91V (100.0%) Temp: 22C/71.6F SyncButton: NO Lev
 C4:DD:57:AB:12:34
 ```
 
-## 📋 Voraussetzungen
+---
 
-- Arduino-kompatibles Board mit BLE (z. B. ESP32)
-- Bibliotheken:
+## 📋 Voraussetzungen / Requirements
+
+- Arduino-kompatibles Board mit BLE (z. B. ESP32)  
+  Arduino-compatible board with BLE (e.g. ESP32)
+- Benötigte Bibliotheken / Required libraries:
   - [`BLEDevice`](https://github.com/nkolban/ESP32_BLE_Arduino)
-  - Keine zusätzliche Mopeka-Bibliothek notwendig
+  - Keine externe Mopeka-Bibliothek notwendig  
+    No external Mopeka library required
+
+---
 
 ## 🔧 Installation
 
-1. Repository klonen oder als ZIP herunterladen
-2. Öffne `main.ino` in der Arduino IDE
-3. Kompiliere & lade den Sketch auf dein ESP32-Board
-4. Öffne den seriellen Monitor (`115200 Baud`)
+1. Repo klonen oder ZIP herunterladen  
+   Clone the repo or download as ZIP  
+2. Öffne `main.ino` in der Arduino IDE  
+   Open `main.ino` in Arduino IDE  
+3. Kompilieren und auf dein ESP32-Board laden  
+   Compile and upload to your ESP32 board  
+4. Seriellen Monitor öffnen (`115200 Baud`)  
+   Open Serial Monitor (`115200 baud`)
 
-## 📁 Dateistruktur
+---
 
-- `main.ino`: Enthält den BLE-Scanner
-- `MopekaAdvertisement.h`: Klasse zum Parsen der Manufacturer Data
+## 📁 Dateien / Files
 
-## 📜 Lizenz
+- `main.ino`: BLE Scanner
+- `MopekaAdvertisement.h`: Klasse zum Parsen / parsing class for Mopeka data
 
-Dieses Projekt steht unter der **MIT-Lizenz** – siehe [LICENSE](LICENSE) für Details.
+---
 
-## 🤝 Mitwirken
+## 📜 Lizenz / License
 
-Pull Requests willkommen! Verbesserungsvorschläge, Issues oder neue Sensortypen gerne einbringen.
+Dieses Projekt steht unter der MIT-Lizenz.  
+This project is licensed under the MIT License.  
+Siehe [LICENSE](LICENSE) / See [LICENSE](LICENSE)
+
+---
+
+## 🤝 Mitwirken / Contributing
+
+Pull Requests willkommen!  
+Pull requests are welcome – contributions, fixes or improvements appreciated.
